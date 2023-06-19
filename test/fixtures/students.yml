@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  father_name: MyString
+  mother_name: MyString
+  dob: 2023-06-18
+  scholar_id: MyString
+  aadhar_number: MyString
+  samagra_id: MyString
+  mobile_number: MyString
+  bank_account_number: MyString
+
+two:
+  name: MyString
+  father_name: MyString
+  mother_name: MyString
+  dob: 2023-06-18
+  scholar_id: MyString
+  aadhar_number: MyString
+  samagra_id: MyString
+  mobile_number: MyString
+  bank_account_number: MyString

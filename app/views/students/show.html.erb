@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+      background-image: url("https://e1.pxfuel.com/desktop-wallpaper/395/382/desktop-wallpaper-lycee-anime-school-lunchroom.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+    }
+
+    p.notice {
+      color: green;
+      margin-bottom: 10px;
+    }
+
+    .student-details {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      opacity: 0.8;
+    }
+
+    .navigation-links {
+      margin-top: 20px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    .navigation-links a,
+    .navigation-links button {
+      text-decoration: none;
+      color: #fff;
+      margin-right: 10px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .edit-button {
+      background-color: #3498db;
+      border: none;
+    }
+
+    .edit-button:hover {
+      background-color: #2980b9;
+    }
+
+    .back-button {
+      background-color: #555555;
+      border: none;
+    }
+
+    .back-button:hover {
+      background-color: #444444;
+    }
+
+    .destroy-button {
+      background-color: #ff5555;
+      border: none;
+    }
+
+    .destroy-button:hover {
+      background-color: #ff3333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="student-details">
+    <%= render @student %>
+  </div>
+
+  <div class="navigation-links">
+    <%= button_to "Edit this student", edit_student_path(@student), class: "edit-button" %>
+    <%= link_to "Back to students", students_path, class: "back-button" %>
+    <%= button_to "Destroy this student", @student, method: :delete, class: "destroy-button" %>
+  </div>
+</body>
+</html>

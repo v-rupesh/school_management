@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SchoolManagement</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_importmap_tags %>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    nav .edit-profile-button {
+      background-color: #337ab7;
+      margin-right: 10px;
+    }
+
+    nav .logout-button {
+      background-color: #d9534f;
+    }
+
+    nav a:hover {
+      background-color: #555555;
+    }
+
+    nav strong {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <% if teacher_signed_in? %>
+      <%= link_to "Edit Profile", edit_teacher_registration_path, class: "edit-profile-button" %>
+      <%= link_to "Logout", destroy_teacher_session_path, method: :delete, class: "logout-button" %>
+    <% end %>
+  </nav>
+
+  <%= yield %>
+</body>
+</html>

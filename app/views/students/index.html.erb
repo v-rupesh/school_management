@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Students</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+      background-image: url("https://rare-gallery.com/mocahbig/396787-wallpaper-anime-girl-sky-lantern-sunset-art-school.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .notice {
+      color: green;
+    }
+
+    #students {
+      margin-bottom: 20px;
+    }
+
+    .student-card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 10px;
+      opacity: 0.8;
+    }
+
+    .student-card p {
+      margin-bottom: 5px;
+    }
+
+    .student-card .action-buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .student-card .show-student-button {
+      background-color: #337ab7;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .student-card .show-student-button:hover {
+      background-color: #23527c;
+    }
+
+    .student-card .new-student-button {
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .student-card .new-student-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <% if notice.present? %>
+    <p class="notice"><%= notice %></p>
+  <% end %>
+
+  <h1>Students</h1>
+
+  <div id="students">
+    <% @students.each do |student| %>
+      <div class="student-card">
+        <%= render student %>
+        <div class="action-buttons">
+          <%= link_to "Show this student", student, class: "show-student-button" %>
+          <%= link_to "New student", new_student_path, class: "new-student-button" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</body>
+</html>
